@@ -1,5 +1,7 @@
-# PROJECT MANPRO
-# Kelompok 16
+# PROJECT PSChii
+# PSC Cost Recovery Financial Modeler
+
+# Version: v.1.1
 
 # ==========================================
 # 0. LIBRARY
@@ -18,6 +20,7 @@ import yfinance as yf
 # ==========================================
 # 1. PAGE CONFIGURATION & HEADER
 # ==========================================
+# Logo
 logo_path = "assets/PSChii.png"
 try:
     logo = Image.open(logo_path)
@@ -26,7 +29,7 @@ except FileNotFoundError:
     st.set_page_config(layout="wide", page_title="PSChii v.1.1", page_icon="🛢️")
     logo = None
 
-# Custom CSS Premium
+# CSS
 st.markdown("""
 <style>
     div[data-testid="stMetricValue"] {
@@ -42,7 +45,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Fungsi Cache untuk Harga Minyak
+# Cache, oil price
 @st.cache_data(ttl=3600)
 def fetch_live_oil_prices():
     try:
@@ -648,7 +651,7 @@ with tab3:
     st.plotly_chart(fig_3d, use_container_width=True)
 
 # ------------------------------------------
-# TAB BARU: MONTE CARLO SIMULATION
+# TAB 4: MONTE CARLO SIMULATION
 # ------------------------------------------
 with tab_mc:
     st.markdown("### 🎲 Monte Carlo Probabilistic Simulation")
@@ -693,7 +696,7 @@ with tab_mc:
                 st.error(f"⚠️ **Probability of Commercial Success (POS): {prob_success:.2%}** (Risiko Tinggi)")
 
 # ------------------------------------------
-# TAB 4: ABOUT PSChii
+# TAB 5: ABOUT
 # ------------------------------------------
 with tab4:
     st.markdown("### ℹ️ Tentang PSChii")
@@ -724,7 +727,7 @@ with tab4:
     st.markdown("Untuk masukan atau pelaporan *bug*, silakan hubungi contact person melalui email: [abraham.bramanti@outlook.com](mailto:abraham.bramanti@outlook.com) atau melalui [LinkedIn](https://www.linkedin.com/in/abraham-bramanti/).")
 
 # ==========================================
-# FOOTER BERSAMA
+# FOOTER
 # ==========================================
 st.markdown("<br><br>", unsafe_allow_html=True)
 st.markdown("---")
