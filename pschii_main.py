@@ -21,7 +21,7 @@ import yfinance as yf
 # 1. PAGE CONFIGURATION & HEADER
 # ==========================================
 # Logo
-logo_path = "assets/PSChii.png"
+logo_path = "assets/pschii.png"
 try:
     logo = Image.open(logo_path)
     st.set_page_config(layout="wide", page_title="PSChii v.1.1", page_icon=logo)
